@@ -1,0 +1,16 @@
+{
+  "name": "designpatternts",
+  "version": "1.0.0",
+  "description": "This repository is focused on learning Design Patterns using TypeScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Design",
+    "Patters",
+    "Typescript"
+  ],
+  "author": "Rohan29-AN",
+  "license": "ISC"
+}
