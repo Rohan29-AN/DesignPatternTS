@@ -1,3 +1,4 @@
+//component
 abstract class Car {
     public description: string;
     public getDescription(): string {
@@ -7,26 +8,30 @@ abstract class Car {
     public abstract cost(): number;
 }
 
-class ModelS {
+//Concrete component
+class ModelS extends Car{
     public description = "Model S";
     public cost(): number {
         return 100000;
     }
 }
 
-class ModelX {
+//Concrete component
+class ModelX extends Car{
     public description = "Model X";
     public cost(): number {
         return 300000;
     }
 }
 
+//Decorator
 abstract class CarOptions extends Car {
     decoratedCar: Car;
     public abstract getDescription(): string;
     public abstract cost(): number;
 }
 
+//Concrete decorator
 class EnhancedAutoPilot extends CarOptions {
     decoratedCar: Car;
 
@@ -62,4 +67,10 @@ class RearFacingSeats extends CarOptions {
 
 }
 
+//main ^_^
+let myTesla=new ModelS();
+myTesla= new RearFacingSeats(myTesla);
+
+console.log(myTesla.cost())
+console.log(myTesla.getDescription())
 
