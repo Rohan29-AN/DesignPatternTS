@@ -35,3 +35,42 @@ class weatherStation implements Subject{
         }
     }
 }
+
+class temperatureDisplay implements Observer{
+    private subject:Subject;
+
+    constructor(weatherStation: weatherStation){
+        this.subject=weatherStation;
+        this.subject.registerObserver(this);
+    }
+
+    update(temperature: number) {
+        console.log("Temperature display : I need to update my display");
+    }
+
+}
+
+class Fan implements Observer{
+    private subject:Subject;
+
+    constructor(weatherStation: weatherStation){
+        this.subject=weatherStation;
+        this.subject.registerObserver(this);
+    }
+
+    update(temperature: number) {
+        if(temperature > 25){
+            console.log("Fan : TURN ON");
+        }
+        else{
+            console.log("Fan : TURN OFF");
+        }
+       
+    }
+}
+
+let wStation= new weatherStation();
+let tDisplay= new temperatureDisplay(wStation);
+let fan1= new Fan(wStation);
+wStation.setTemperature(20);
+wStation.setTemperature(26);
