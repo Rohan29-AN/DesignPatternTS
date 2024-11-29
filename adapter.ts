@@ -45,3 +45,10 @@ class MicroUsbToLightningAdapter implements Iphone{
     }
 
 }
+
+
+let iphone7= new iphoneDevice();
+let googlePixel= new androidDevice();
+
+let usbToLightningCharger=new  MicroUsbToLightningAdapter(googlePixel);
+usbToLightningCharger.useLighting();
